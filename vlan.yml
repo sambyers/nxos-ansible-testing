@@ -16,3 +16,6 @@
         host: "{{ inventory_hostname }}"
         username: "{{ username }}"
         transport: "{{ transport }}"
+        register: echo
+    - debug: var=item.stdout
+      with_items: echo.result
