@@ -13,6 +13,6 @@
       nxos_vlan:
       vlan_id: 100
       state: absent
-      host: "{{ inventory_hostname }}"
-      username: "{{ username }}"
-      transport: "{{ transport }}"
+      #host: "{{ inventory_hostname }}"
+      #username: "{{ username }}"
+      #transport: "{{ transport }}"
