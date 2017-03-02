@@ -1,21 +1,18 @@
-# Example from ansible docs
+# Example playbook
 ---
-vars:
-  cli:
-    host: "{{ inventory_hostname }}"
-    username: cisco
-    password: cisco
-    transport: cli
+- name: check a vlan
+  hosts: demo_nexus_switches
+  connection: local
+  gather_facts: no
 
-- nxos_facts:
-    gather_subset: all
+  vars_files:
+    - external_vars.yml
 
-# Collect only the config and default facts
-- nxos_facts:
-    gather_subset:
-      - config
-
-# Do not collect hardware facts
-- nxos_facts:
-    gather_subset:
-      - "!hardware"
+  tasks:
+    - name: Make sure vlan 100 doesn't exist
+      nxos_vlan:
+      vlan_id: 100
+      state: absent
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      transport: "{{ transport }}"
