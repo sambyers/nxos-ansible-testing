@@ -1,6 +1,6 @@
 # Example playbook
 ---
-- name: check a vlan
+- name: enable nxapi feature
   hosts: demo_nexus_switches
   connection: local
   gather_facts: no
@@ -10,21 +10,23 @@
 
   tasks:
 
-  - name: Make sure vlan 100 doesn't exist
-    nxos_vlan:
-      vlan_id: 100
-      state: absent
+  - name: Make sure NXAPI is on
+    nxos_config:
+      lines:
+        - feature nxapi
+        - nxapi https port 443
+      save: no
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
       transport: "{{ transport }}"
 
-  - name: Make sure vlan 200,300 exist
-    nxos_vlan:
-      vlan_range: "200,300"
+  - name: Save the running config
+    nxos_command:
+      commands:
+        - command: copy running-config startup-config
+          output: text
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
       transport: "{{ transport }}"
-
- 
