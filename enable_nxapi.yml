@@ -20,3 +20,12 @@
       username: "{{ username }}"
       password: "{{ password }}"
       transport: "{{ transport }}"
+
+  - name: Save the running config
+    nxos_command:
+      commands:
+        - copy running start
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      transport: "{{ transport }}"
