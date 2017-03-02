@@ -3,7 +3,7 @@
 - name: check a vlan
   hosts: demo_nexus_switches
   connection: local
-  gather_facts: no
+  gather_facts: yes
 
   vars_files:
     - external_vars.yml
