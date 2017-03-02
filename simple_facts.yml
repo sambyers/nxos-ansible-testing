@@ -1,0 +1,22 @@
+# Example from ansible docs
+---
+vars:
+  cli:
+    host: "{{ inventory_hostname }}"
+    username: cisco
+    password: cisco
+    transport: cli
+
+---
+- nxos_facts:
+    gather_subset: all
+
+# Collect only the config and default facts
+- nxos_facts:
+    gather_subset:
+      - config
+
+# Do not collect hardware facts
+- nxos_facts:
+    gather_subset:
+      - "!hardware"
