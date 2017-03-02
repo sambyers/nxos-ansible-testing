@@ -1,0 +1,18 @@
+# Example playbook
+---
+- name: check a vlan
+  hosts: demo_nexus_switches
+  connection: local
+  gather_facts: no
+
+  vars_files:
+    - external_vars.yml
+
+  tasks:
+    - name: Make sure vlan 100 doesn't exist
+      nxos_vlan:
+      vlan_id: 100
+      state: absent
+      #host: "{{ inventory_hostname }}"
+      #username: "{{ username }}"
+      #transport: "{{ transport }}"
