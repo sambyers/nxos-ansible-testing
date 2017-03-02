@@ -18,7 +18,6 @@
         - nxapi https port 443
         - end
         - copy run st
-      save: yes
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
