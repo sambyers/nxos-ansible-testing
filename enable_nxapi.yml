@@ -14,7 +14,7 @@
     nxos_config:
       lines:
         - feature nxapi
-        - nxapi https 443
+        - nxapi https port 443
       save: yes
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
