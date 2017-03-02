@@ -3,20 +3,21 @@
 - name: check a vlan
   hosts: demo_nexus_switches
   connection: local
-  gather_facts: yes
+  gather_facts: no
 
   vars_files:
     - external_vars.yml
 
   tasks:
-    - name: Make sure vlan 100 doesn't exist
-      nxos_vlan:
-        vlan_id: 100
-        state: absent
-        host: "{{ inventory_hostname }}"
-        username: "{{ username }}"
-        password: "{{ password }}"
-        transport: "{{ transport }}"
-        register: echo
-    - debug: var=item.stdout
-      with_items: echo.result
+    
+  - name: Make sure vlan 100 doesn't exist
+    nxos_vlan:
+      vlan_id: 100
+      state: absent
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      transport: "{{ transport }}"
+      register: echo
+  - debug: var=item.stdout
+    with_items: echo.result
