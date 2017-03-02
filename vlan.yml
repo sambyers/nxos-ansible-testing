@@ -21,7 +21,7 @@
 
   - name: Make sure vlan 200,300 exist
     nxos_vlan:
-      vlan_range: "200-203"
+      vlan_range: "201-203"
       state: present
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
