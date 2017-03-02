@@ -1,5 +1,10 @@
-[demo nexus switches]
+[demo_nexus_switches]
 172.16.1.160	ansible_connection=ssh	ansible_user=cisco
 172.16.1.161	ansible_connection=ssh	ansible_user=cisco
 172.16.1.162	ansible_connection=ssh	ansible_user=cisco
 172.16.1.163	ansible_connection=ssh	ansible_user=cisco
+
+[demo_nexus_switches:vars]
+ansible_ssh_pass=cisco
+ansible_user=cisco
+ansible_connection=ssh
