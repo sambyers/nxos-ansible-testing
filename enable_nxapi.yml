@@ -25,7 +25,7 @@
     nxos_command:
       commands:
         - copy running-config startup-config
-          output: text
+        output: text
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
