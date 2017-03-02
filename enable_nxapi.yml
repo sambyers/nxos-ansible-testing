@@ -11,9 +11,11 @@
   tasks:
 
   - name: Make sure NXAPI is on
-    nxos_feature:
-      feature: nxapi
-      state: enabled
+    nxos_config:
+      lines:
+        - feature nxapi
+        - nxapi https 443
+      save: yes
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
