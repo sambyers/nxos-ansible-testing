@@ -15,7 +15,7 @@
       lines:
         - feature nxapi
         - nxapi https port 443
-      save: yes
+      save: no
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
