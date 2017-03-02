@@ -11,8 +11,8 @@
   tasks:
     - name: Make sure vlan 100 doesn't exist
       nxos_vlan:
-      vlan_id: 100
-      state: absent
-      #host: "{{ inventory_hostname }}"
-      #username: "{{ username }}"
-      #transport: "{{ transport }}"
+        vlan_id: 100
+        state: absent
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        transport: "{{ transport }}"
