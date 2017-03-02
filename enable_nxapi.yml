@@ -1,0 +1,20 @@
+# Example playbook
+---
+- name: enable nxapi feature
+  hosts: demo_nexus_switches
+  connection: local
+  gather_facts: no
+
+  vars_files:
+    - external_vars.yml
+
+  tasks:
+
+  - name: Make sure NXAPI is on
+    nxos_feature:
+      feature: nxapi
+      state: enabled
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      transport: "{{ transport }}"
