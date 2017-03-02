@@ -2,7 +2,7 @@
 ---
 vars:
   cli:
-    host: "{{ inventory_hostname }}"
+    host: "./hosts"
     username: cisco
     password: cisco
     transport: cli
