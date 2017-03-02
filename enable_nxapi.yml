@@ -3,7 +3,7 @@
 - name: enable nxapi feature
   hosts: demo_nexus_switches
   connection: local
-  gather_facts: no
+  gather_facts: yes
 
   vars_files:
     - external_vars.yml
@@ -13,20 +13,11 @@
   - name: Make sure NXAPI is on
     nxos_config:
       lines:
-        - feature nxapi
-        - nxapi https port 443
-      save: no
+        - feature hsrp
+        - feature bfd
+      save: yes
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
       transport: "{{ transport }}"
 
-  - name: Save the running config
-    nxos_command:
-      commands:
-        - command: copy running-config startup-config
-          output: text
-      host: "{{ inventory_hostname }}"
-      username: "{{ username }}"
-      password: "{{ password }}"
-      transport: "{{ transport }}"
