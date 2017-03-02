@@ -15,6 +15,7 @@
         state: absent
         host: "{{ inventory_hostname }}"
         username: "{{ username }}"
+        password: "{{ password }}"
         transport: "{{ transport }}"
         register: echo
     - debug: var=item.stdout
