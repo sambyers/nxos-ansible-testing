@@ -15,6 +15,3 @@
       feature: nxapi
       state: enabled
       host: "{{ inventory_hostname }}"
-      username: "{{ username }}"
-      password: "{{ password }}"
-      transport: "{{ transport }}"
