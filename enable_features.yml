@@ -1,6 +1,6 @@
 # Example playbook
 ---
-- name: enable nxapi feature
+- name: enable features
   hosts: demo_nexus_switches
   connection: local
   gather_facts: yes
@@ -10,7 +10,7 @@
 
   tasks:
 
-  - name: Make sure NXAPI is on
+  - name: Enable HSRP and BFD
     nxos_config:
       lines:
         - feature hsrp
