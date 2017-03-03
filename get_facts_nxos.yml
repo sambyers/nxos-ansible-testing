@@ -9,6 +9,6 @@
     - external_vars.yml
   tasks:
   - name: Get IP addresses of NXOS device
-    - nxos_facts:
-        gather_subset:
-          - ansible_net_all_ipv4_addresses
+  - nxos_facts:
+      gather_subset:
+        - ansible_net_all_ipv4_addresses
