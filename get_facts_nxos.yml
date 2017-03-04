@@ -12,5 +12,8 @@
   - name: Get interfaces of NXOS device
     nxos_facts:
       host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      transport: "{{ transport }}"
       gather_subset:
         - interfaces
