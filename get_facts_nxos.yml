@@ -10,7 +10,7 @@
   
   tasks:
   - name: Get interfaces of NXOS device
-  - nxos_facts:
+    nxos_facts:
       host = "{{ inventory_hostname }}"
       gather_subset:
         - interfaces
