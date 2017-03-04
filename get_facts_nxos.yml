@@ -9,7 +9,8 @@
     - external_vars.yml
   
   tasks:
-  - name: Get IP addresses of NXOS device
+  - name: Get interfaces of NXOS device
     nxos_facts:
+      host = "{{ inventory_hostname }}"
       gather_subset:
         - interfaces
