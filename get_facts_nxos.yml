@@ -9,7 +9,7 @@
     - external_vars.yml
   
   tasks:
-  - name: Get IP addresses of NXOS device
-  - nxos_facts:
+    - name: Get IP addresses of NXOS device
+    - nxos_facts:
       gather_subset:
         - interfaces
