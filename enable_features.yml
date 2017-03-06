@@ -3,7 +3,7 @@
 - name: enable features
   hosts: demo_nexus_switches
   connection: local
-  gather_facts: yes
+  gather_facts: no
 
   vars_files:
     - external_vars.yml
@@ -15,7 +15,7 @@
       lines:
         - feature hsrp
         - feature bfd
-      save: yes
+      save: no
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"

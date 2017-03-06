@@ -16,4 +16,4 @@
       password: "{{ password }}"
       transport: "{{ transport }}"
       gather_subset:
-        - interfaces
+        - hardware
