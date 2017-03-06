@@ -13,8 +13,8 @@
   - name: Enable feature HSRP and BFD
     nxos_config:
       lines:
-        - no feature hsrp
-        - no feature bfd
+        - feature hsrp
+        - feature bfd
       save: no
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"

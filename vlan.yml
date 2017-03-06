@@ -14,7 +14,7 @@
     nxos_vlan:
       vlan_id: 100
       name: web
-      state: absent
+      state: present
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
@@ -24,7 +24,7 @@
     nxos_vlan:
       vlan_id: 200
       name: database
-      state: absent
+      state: present
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
