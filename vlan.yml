@@ -1,6 +1,6 @@
 # Example playbook
 ---
-- name: add vlan 100 to all switches
+- name: Change VLANs on switches
   hosts: demo_nexus_switches
   connection: local
   gather_facts: no
@@ -13,10 +13,18 @@
   - name: Make sure vlan 100 is present
     nxos_vlan:
       vlan_id: 100
-      state: absent
+      state: present
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
       transport: "{{ transport }}"
-
+  
+  - name: Make sure vlan 200 is present
+    nxos_vlan:
+      vlan_id: 200
+      state: present
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      transport: "{{ transport }}"
  
