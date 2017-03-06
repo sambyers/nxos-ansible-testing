@@ -9,7 +9,7 @@
     - external_vars.yml
   
   tasks:
-  - name: Get interfaces of NXOS device
+  - name: Get hardware info of NXOS device
     nxos_facts:
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
