@@ -13,7 +13,7 @@
   - name: Enable feature LACP
     nxos_feature:
       feature: lacp
-      state: enabled
+      state: disabled
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
