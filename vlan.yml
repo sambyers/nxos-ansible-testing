@@ -10,10 +10,10 @@
 
   tasks:
 
-  - name: Make sure vlan 100 doesn't exist
+  - name: Make sure vlan 100 is present
     nxos_vlan:
       vlan_id: 100
-      state: present
+      state: absent
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"

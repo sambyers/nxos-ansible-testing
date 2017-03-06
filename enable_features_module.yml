@@ -10,12 +10,10 @@
 
   tasks:
 
-  - name: Enable feature HSRP and BFD
-    nxos_config:
-      lines:
-        - feature hsrp
-        - feature bfd
-      save: no
+  - name: Enable feature LACP
+    nxos_feature:
+      feature: lacp
+      state: enabled
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
