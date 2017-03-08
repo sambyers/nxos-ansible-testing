@@ -19,24 +19,12 @@
       username: "{{ username }}"
       password: "{{ password }}"
       transport: "{{ transport }}"
-    notify: save config
   
   - name: Make sure vlan 200 is present
     nxos_vlan:
       vlan_id: 200
       name: database
       state: absent
-      host: "{{ inventory_hostname }}"
-      username: "{{ username }}"
-      password: "{{ password }}"
-      transport: "{{ transport }}"
-    notify: save config
-
-  handlers:
-    - name: save config
-      nxos_conmmand:
-        commands:
-          - copy running start
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
