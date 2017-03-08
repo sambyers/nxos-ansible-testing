@@ -33,7 +33,7 @@
     notify: save config
 
   handlers:
-  - name: save config
-    nxos_conmmand:
-      commands:
-        - copy running start
+    - name: save config
+      nxos_conmmand:
+        commands:
+          - copy running start
