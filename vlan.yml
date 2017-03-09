@@ -19,7 +19,9 @@
       username: "{{ username }}"
       password: "{{ password }}"
       transport: "{{ transport }}"
-  
+    notify:
+      - Save config
+
   - name: Make sure vlan 200 is present
     nxos_vlan:
       vlan_id: 200
@@ -29,3 +31,12 @@
       username: "{{ username }}"
       password: "{{ password }}"
       transport: "{{ transport }}"
+    notify:
+      - Save config
+
+
+  handlers:
+    - name: Save config
+      nxos_command:
+        commands: copy running-config startup-config
+        wait_for: result[0] contains "Copy complete."
