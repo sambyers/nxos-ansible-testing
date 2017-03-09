@@ -21,7 +21,7 @@
     nxos_vlan:
       vlan_id: 100
       name: web
-      state: present
+      state: absent
       provider: "{{ cli }}"
     notify:
       - Save config
