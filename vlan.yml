@@ -8,6 +8,13 @@
   vars_files:
     - external_vars.yml
 
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      transport: "{{ transport }}"
+
   tasks:
 
   - name: Make sure vlan 100 is present
@@ -15,10 +22,7 @@
       vlan_id: 100
       name: web
       state: present
-      host: "{{ inventory_hostname }}"
-      username: "{{ username }}"
-      password: "{{ password }}"
-      transport: "{{ transport }}"
+      provider: "{{ cli }}"
     notify:
       - Save config
 
@@ -27,10 +31,7 @@
       vlan_id: 200
       name: database
       state: present
-      host: "{{ inventory_hostname }}"
-      username: "{{ username }}"
-      password: "{{ password }}"
-      transport: "{{ transport }}"
+      provider: "{{ cli }}"
     notify:
       - Save config
 
