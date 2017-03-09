@@ -38,7 +38,6 @@
 
   handlers:
     - name: Save config
-      nxos_command:
-        commands: copy running-config startup-config
-        #wait_for: result[0] contains "Copy complete."
+      nxos_config:
+        save: yes
         provider: "{{ cli }}"
